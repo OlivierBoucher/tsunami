@@ -1,4 +1,4 @@
-var coreModule = angular.module('coreModule', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.showErrors'])
+var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate','ui.bootstrap', 'ui.bootstrap.showErrors'])
 .directive('datepickerPopup', function (){
     return {
         restrict: 'EAC',

@@ -1,3 +1,14 @@
+<div style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+</div>
 <div class="form">
 	<div class="container">
 		<div class="row">
@@ -56,7 +67,16 @@
 				      </select>
 				    </div>
 				  </div>
-				  <input class="btn btn-default" type="submit" ng-click="save()" />
+				  <div class="form-group">
+				  	<div class="col-sm-4 col-sm-offset-8">
+				  		<input class="btn btn-default" style="width:100%;" value="Soumettre"type="submit" ng-click="save()" />
+				  	</div>
+				  </div>
+				  <div class="form-group">
+				  	<div class="col-sm-8 col-sm-offset-4">
+				  		<div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
+				  	</div>
+				  </div>
 				</form>
 			</div>
 		</div>
