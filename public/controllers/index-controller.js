@@ -2,7 +2,7 @@ coreModule.controller('indexCtrl', function($scope, $http, $timeout){
     $scope.title = "testTitle";
     $scope.alerts = [];
     $scope.subbed = false;
-
+    $scope.isCollapsed = true;
     $scope.today = function() {
     	$scope.dt = new Date();
   	};

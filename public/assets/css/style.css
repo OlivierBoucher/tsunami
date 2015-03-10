@@ -1,3 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+}
+p, div {
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 .animate-repeat {
   list-style:none;
@@ -34,4 +42,81 @@
 }
 .alert-danger{
 	border: 0;
+}
+.subCarousel{
+	background-color: #000;
+}
+body{
+	color:#FFF;
+	background-color: #000;
+}
+h2{
+	color:#FFF;
+}
+.eventTimer{
+	background-color: #000;
+	padding-top: 70px;
+}
+.subCarousel h2{
+	margin-top: 15px;
+	color: #FFF;
+	font-size:48px;
+}
+.form-control{
+	border-radius: 0;
+	border: 1px solid;
+	border-color: #FFF;
+	background-color: transparent;
+	color: #FFF;
+}
+.subForm{
+	padding-top: 15px;
+}
+.btn{
+	background-color: #FFF;
+	border-radius: 0;
+	border:0;
+	color: #000;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #FFF;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #FFF;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #FFF;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #FFF;
+}
+.navbar{
+	background-color: #000;
+	color:#FFF;
+	min-height: 100px;
+	border: 0;
+}
+.navbar-default{
+	color:#FFF;
+}
+.navbar-default .navbar-brand{
+	color:#FFF;
+}
+.navbar-default .navbar-nav > li > a{
+	color:#FFF;
+}
+.navbar > .container .navbar-brand{
+	margin-left: 0px;
+}
+.navbar-header{
+	min-height: 100px;
+	border:0;
+}
+.navbar-collapse{
+	border:0;
+}
+.img-responsive{
+	display: inline;
 }

@@ -1,4 +1,4 @@
-var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate','ui.bootstrap', 'ui.bootstrap.showErrors'])
+var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate', 'timer', 'ui.bootstrap', 'ui.bootstrap.showErrors'])
 .directive('datepickerPopup', function (){
     return {
         restrict: 'EAC',
@@ -8,9 +8,18 @@ var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate','ui.bootst
       controller.$formatters.shift();
   }
 }
-});
+})
+.directive('disableNgAnimate', ['$animate', function($animate) {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      $animate.enabled(false, element);
+    }
+  };
+}]);
 coreModule.config(function($routeProvider){
     $routeProvider
         .when('/', {templateUrl: '/views/index.html', controller: 'indexCtrl'})
+        .when('/register/:formId', {templateUrl: '/views/registration.html', controller: 'registrationCtrl'})
         .otherwise({redirectTo : '/views/404.html'});
 });
