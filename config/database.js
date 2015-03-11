@@ -29,4 +29,5 @@ process.on('SIGINT', function() {
 }); 
 
 // BRING IN YOUR SCHEMAS & MODELS // For example 
-require('../models/form');  
+require('../models/form');
+require('../models/profile');    

@@ -1,4 +1,4 @@
-var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate', 'timer', 'ui.bootstrap', 'ui.bootstrap.showErrors'])
+var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate', 'timer', 'ui.bootstrap', 'ui.bootstrap.showErrors', 'angularFileUpload'])
 .directive('datepickerPopup', function (){
     return {
         restrict: 'EAC',
@@ -20,6 +20,6 @@ var coreModule = angular.module('coreModule', ['ngRoute', 'ngAnimate', 'timer', 
 coreModule.config(function($routeProvider){
     $routeProvider
         .when('/', {templateUrl: '/views/index.html', controller: 'indexCtrl'})
-        .when('/register/:formId', {templateUrl: '/views/registration.html', controller: 'registrationCtrl'})
+        .when('/profile/:formId', {templateUrl: '/views/registration.html', controller: 'registrationCtrl'})
         .otherwise({redirectTo : '/views/404.html'});
 });

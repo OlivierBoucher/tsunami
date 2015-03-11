@@ -36,12 +36,15 @@ p, div {
 .alert {
   padding: 5px 10px;
   font-size: 15px;
+  border-radius: 0;
 }
 .alert-success{
 	border: 0;
+	border-radius: 0;
 }
 .alert-danger{
 	border: 0;
+	border-radius: 0;
 }
 .subCarousel{
 	background-color: #000;
@@ -119,4 +122,7 @@ h2{
 }
 .img-responsive{
 	display: inline;
+}
+.progress{
+	border-radius: 0;
 }

@@ -5,7 +5,8 @@ var logger 		= require('morgan');
 var session 	= require('express-session');
 var bodyParser 	= require('body-parser');
 var path 		= require('path');
-var fs 			= require('fs');
+var fs 			= require('fs-extra');
+var multer		= require('multer');
 var db 			= require('./config/database');
 var port 		= process.env.port || 3000;
 var app 		= express();
@@ -19,6 +20,14 @@ var router 		= require('./routes/router');
 app.set('port', port);
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
+app.use(multer({
+	dest	: './temp_uploads/',
+	limits	: {
+		fields		: 0,
+		fileSize	: 2000000,
+		files 		: 5
+	}
+}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
