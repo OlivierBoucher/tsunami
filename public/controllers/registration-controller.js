@@ -10,7 +10,7 @@ coreModule.controller('registrationCtrl', function($scope, $http, $timeout, $rou
 			$scope.loading = false;
 			$scope.profile = profile;
 			$scope.showAttachments = profile.attachments.lenght > 0;
-			$scope.uploader.url = '/api/upload/'+ profile._id;
+			$scope.uploader.url = '/api/profile/'+ profile._id + '/upload';
 			$scope.uploader.filters.push({
 			    name: 'imageFilter',
 			    fn: function(item /*{File|FileLikeObject}*/, options) {

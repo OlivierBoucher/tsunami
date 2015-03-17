@@ -25,20 +25,25 @@ app.use(multer({
 	limits	: {
 		fields		: 0,
 		fileSize	: 2000000,
-		files 		: 5
+		files 		: 10
 	}
 }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
+/*app.use(session({
 	secret: 'im yo daddy',
 	resave: false,
 	saveUninitialized: true
-}));
+}));*/
 if(!module.parent){ app.use(logger('dev'));}
 // ROUTING
 // ============================================
 app.use('/', router);
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 if(!module.parent){
 	app.listen(port);
