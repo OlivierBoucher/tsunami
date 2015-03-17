@@ -1,0 +1,41 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(name='viewport', content='width=device-width')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title Confirmez votre inscription pour Tsunami
+    link(href='styles.css', media='all', rel='stylesheet', type='text/css')
+  body(itemscope='', itemtype='http://schema.org/EmailMessage')
+    table.body-wrap
+      tr
+        td
+        td.container(width='600')
+          .content
+            table.main(width='100%', cellpadding='0', cellspacing='0', itemprop='action', itemscope='', itemtype='http://schema.org/ConfirmAction')
+              tr
+                td.content-wrap
+                  meta(itemprop='name', content='Confirm Email')
+                  table(width='100%', cellpadding='0', cellspacing='0')
+                    tr
+                      td.content-block
+                        h1= 'Bonjour ' + form.fullName
+                    tr
+                      td.content-block
+                        | Merci de confirmer votre intéret en nous donnant plus d'informations sur vous.
+                    tr
+                      td.content-block
+                        | Vous pourrez ajouter des images de vos oeuvres, un lien vers votre portfolio et nous écrire un message privé.
+                    tr
+                      td.content-block(itemprop='handler', itemscope='', itemtype='http://schema.org/HttpActionHandler')
+                        a.btn-primary(href='http://www.tsu-nami.ca/#/profile/' + form._id, itemprop='url') Finaliser l'inscription
+                    tr
+                      td.content-block
+                        | — L'équipe Tsunami
+            .footer
+              table(width='100%')
+                tr
+                  td.aligncenter.content-block
+                    | Suivez 
+                    a(href='http://facebook.com/') Tsunami
+                    |  sur facebook.
+        td
