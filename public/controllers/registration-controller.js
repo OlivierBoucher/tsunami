@@ -9,7 +9,7 @@ coreModule.controller('registrationCtrl', function($scope, $http, $timeout, $rou
 			console.log(profile);
 			$scope.loading = false;
 			$scope.profile = profile;
-			$scope.showAttachments = profile.attachments.lenght > 0;
+			$scope.showAttachments = profile.attachments.length > 0;
 			$scope.uploader.url = '/api/profile/'+ profile._id + '/upload';
 			$scope.uploader.filters.push({
 				name: 'imageFilter',
@@ -37,8 +37,10 @@ coreModule.controller('registrationCtrl', function($scope, $http, $timeout, $rou
 		}, 5000);
 	};
 	$scope.saveProfile = function(){
-		$scope.uploader.uploadAll();
-		//$scope.uploader.clearQueue();
+		if($scope.uploader.queue.length > 0){
+			$scope.uploader.uploadAll();
+			//$scope.uploader.clearQueue();
+		}
 		var data = {
 			portfolioLink: $scope.profile.portfolioLink,
 			customMessage: $scope.profile.customMessage

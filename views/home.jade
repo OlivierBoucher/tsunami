@@ -1,0 +1,50 @@
+extends default-layout
+
+block content
+	.homeLayout
+		.container
+			.row
+				.col-md-4
+					h2 Mes favoris
+					table.table.table-bordered
+						thhead
+							tr
+								th Nom
+								th Consulter
+						tbody
+							each profile in likedProfiles
+								tr
+									td=profile.fullName
+									td
+										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
+				.col-md-8
+					h2 Tout les profiles
+					table.table.table-bordered
+						thead
+							tr
+								th.text-center Nom complet
+								th.text-center Email
+								th.text-center Dernière modif.
+								th.text-center Vu
+								th.text-center Consulter
+						tbody
+							each profile in profiles.unseen
+								tr
+									td.text-center=profile.fullName
+									td.text-center=profile.email
+									td.text-center=moment(profile.lastModified).locale('fr').fromNow()
+									td.text-center Non
+									td.text-center
+										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
+							each profile in profiles.seen
+								tr
+									td.text-center=profile.fullName
+									td.text-center=profile.email
+									td.text-center=moment(profile.lastModified).locale('fr').fromNow()
+									td.text-center Oui
+									td.text-center
+										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
+
+
+
+

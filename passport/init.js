@@ -1,6 +1,6 @@
 var login 		= require('./login');
 var mongoose 	= require('mongoose');
-var User 		= mongoose.model('TestUser');
+var User 		= mongoose.model('TestUser2');
 
 module.exports = function(passport){
 	passport.serializeUser(function(user, done){

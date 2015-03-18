@@ -55,8 +55,11 @@ module.exports = function(passport){
 		failureRedirect: '/',
 		failureFlash : true
 	}));
-	router.get('/wicked-admins/home', isAuthenticated, admin.home);
 	router.get('/wicked-admins/login', admin.login);
+	router.get('/wicked-admins/home', isAuthenticated, admin.home);
+	router.get('/wicked-admins/profile/:id', isAuthenticated, admin.getProfile);
+	router.get('/wicked-admins/profile/:id/addFavorite', isAuthenticated, admin.addFavorite);
+	router.get('/wicked-admins/profile/:id/removeFavorite', isAuthenticated, admin.removeFavorite);
 
 	return router;
 }

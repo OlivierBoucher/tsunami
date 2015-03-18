@@ -1,5 +1,5 @@
 var mongoose 	= require('mongoose');
-var User 		= mongoose.model('TestUser');
+var User 		= mongoose.model('TestUser2');
 
 var olivier = new User({
 	username: 'olivier',

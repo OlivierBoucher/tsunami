@@ -1,0 +1,35 @@
+extends default-layout
+
+block content
+	.homeLayout
+		.container
+			.row
+				.col-md-8.col-md-offset-2
+					h1
+						|Profile 
+						a(href=(isFavorite ? ('/wicked-admins/profile/' + profile.id + '/removeFavorite') : ('/wicked-admins/profile/' + profile.id + '/addFavorite')))
+							i(class=(isFavorite ? 'glyphicon glyphicon-star' : 'glyphicon glyphicon-star-empty'))
+					p= 'Nom: ' + profile.fullName
+					p= 'Courriel: ' + profile.email
+					p
+						if profile.portfolioLink != ''
+							a(href='http://'+ profile.portfolioLink target='_blank') Lien vers le portfolio
+						else
+							| Aucun portfolio sauvegardé
+					p
+						if profile.customMessage != ''
+							h4 Description de l'artiste
+							blockquote=profile.customMessage
+						else
+							| Aucune description sauvegardée
+			.row
+				.col-md-8.col-md-offset-2
+					if profile.attachments.length > 0
+						h1 Oeuvres
+						.row
+							each picture, index in profile.attachments
+								.col-md-12
+									a(href='/'+picture.path target='_blank' class='thumbnail')
+										img(src='/'+ picture.path alt=picture.fileName)
+					else
+						h1 Aucune oeuvre jointe

@@ -5,6 +5,7 @@ var schema = {
 	formId			: {type : String},
 	portfolioLink	: {type : String},
 	customMessage	: {type : String},
-	attachments		: [{path : String, fileName : String}]
+	attachments		: [{path : String, fileName : String}],
+	lastModified 	: {type : Date}
 }
-module.exports = mongoose.model('TestApiProfile2', schema);
+module.exports = mongoose.model('TestApiProfile3', schema);

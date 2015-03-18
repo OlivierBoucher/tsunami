@@ -15,6 +15,7 @@ module.exports 	= app;
 
 // CONFIGURATIONS
 // ============================================
+app.locals.moment = require('moment');
 app.set('port', port);
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
