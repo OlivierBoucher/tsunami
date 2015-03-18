@@ -12,9 +12,9 @@ coreModule.factory('registrationSrvc', function ($http, $q, $timeout) {
                     'Content-Type': 'application/json'
                 },
                 data: {id : formId}
-                };
+            };
             $http(req)
-                .success(function(data, status, headers, config) {
+            .success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
                     if(data.result = 'Success'){
@@ -22,12 +22,12 @@ coreModule.factory('registrationSrvc', function ($http, $q, $timeout) {
                         deferred.resolve(factory.profile);
                     }
                 })
-                .error(function(data, status, headers, config) {
+            .error(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
                     console.log('error');
                     deferred.reject('Impossible de récupérer le profile');
-            });
+                });
             return deferred.promise;
         }
     }

@@ -1,0 +1,11 @@
+extends default-layout
+
+block content
+	.container
+		form.form-signin(method='POST', action='/wicked-admins/auth')
+			h2.form-signin-heading Please sign in
+			label.sr-only(for='inputUsername') Username
+			input#inputUsername.form-control(type='text', name="username", placeholder='Username', required='', autofocus='')
+			label.sr-only(for='inputPassword') Password
+			input#inputPassword.form-control(type='password', name="password", placeholder='Password', required='')
+			button.btn.btn-lg.btn-default.btn-block(type='submit') Sign in

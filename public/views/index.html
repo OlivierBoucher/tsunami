@@ -10,25 +10,25 @@
     </carousel>
 </div>-->
 <nav class="navbar navbar-default navbar-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-click="isCollapsed = !isCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="assets/img/ts_logo.png" style="max-width: 200px;"/></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse" collapse="isCollapsed">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="text-center"><a href="#">DÉROULEMENT</a></li>
-            <li class="text-center"><a href="#">CONCEPT</a></li>
-            <li class="text-center"><a href="#">PARTENAIRES</a></li>
-            <li class="text-center"><a href="#">CONTACT</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-click="isCollapsed = !isCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="assets/img/ts_logo.png" style="max-width: 200px;"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse" collapse="isCollapsed">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="text-center"><a href="#">DÉROULEMENT</a></li>
+				<li class="text-center"><a href="#">CONCEPT</a></li>
+				<li class="text-center"><a href="#">PARTENAIRES</a></li>
+				<li class="text-center"><a href="#">CONTACT</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
 </nav>
 <!--<div class="eventTimer">
 	<div class="container">
@@ -59,38 +59,47 @@
 							<timer end-time="1429099200000">
 								<h2>
 									{{days}} /
-								 	{{hours}} /
-								  	{{minutes}} /
-								  	{{seconds}}
-								 </h2>
+									{{hours}} /
+									{{minutes}} /
+									{{seconds}}
+								</h2>
 							</timer>
 						</div>
 					</div>
-				  <div class="form-group" show-errors>
-				    
-				    <div class="col-sm-8 col-sm-offset-2">
-				      <input type="text" name="fullName" class="form-control" id="inputFullName" placeholder="Nom complet" 
-				      ng-model="user.fullName" required/>
-				    </div>
-				  </div>
-				  <div class="form-group" show-errors>
-				    
-				    <div class="col-sm-8 col-sm-offset-2">
-				      <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Courriel" 
-				      ng-model="user.email" required/>
-				    </div>
-				  </div>
-				  <div class="form-group">
-				  	<div class="col-sm-8 col-sm-offset-2">
-				  		<input class="btn btn-default" style="width:100%;" value="M'inscrire"type="submit" ng-click="save()" />
-				  	</div>
-				  </div>
-				  <div class="form-group">
-				  	<div class="col-sm-8 col-sm-offset-2">
-				  		<div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
-				  	</div>
-				  </div>
+					<div class="form-group" show-errors>
+						
+						<div class="col-sm-8 col-sm-offset-2">
+							<input type="text" name="fullName" class="form-control" id="inputFullName" placeholder="Nom complet" 
+							ng-model="user.fullName" required/>
+						</div>
+					</div>
+					<div class="form-group" show-errors>
+						
+						<div class="col-sm-8 col-sm-offset-2">
+							<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Courriel" 
+							ng-model="user.email" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-8 col-sm-offset-2">
+							<input class="btn btn-default" style="width:100%;" value="M'inscrire"type="submit" ng-click="save()" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-8 col-sm-offset-2">
+							<div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
+						</div>
+					</div>
 				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="quotes">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-justify">
+				<h1>&ldquo;</h1><p>Rien sur ce foutu papier, un vaste étendu de neige, l’éternel devant mes yeux, c’est ça l’hiver nucléaire, des boulettes de regret dans le gorgoton, comment faire revenir cette inspiration perdue dans les dédales de mon être, que dalle... Comme pour faire face au néant, la lumière doit jaillir, alors donc, inversons les rôles, de cette lumière faisons émerger le néant, avec ce trait noir nous ferons en sorte que cette surface devienne autre chose, un mélange des êtres chaotiques que nous sommes et de cette perfection originelle, avec ce mur blanc réinventons notre monde, chacun à notre manière. Vague déferlante de traits noirs -Tsunami- à lacérer la perfection, on en a que faire du parfait, on est des humains. Un hapenning de haute envergure qui réunira des lacéreurs de tout acabit.</p><h1 style="float:right; margin-top:10px">&rdquo;</h1>
 			</div>
 		</div>
 	</div>
