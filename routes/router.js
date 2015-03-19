@@ -27,7 +27,9 @@ var isAuthenticated = function (req, res, next) {
 }
 
 module.exports = function(passport){
-	// GET Angular app
+	//=======================================================
+	// ANGULAR APP
+	//=======================================================
 	router.get('/', function(req, res) {
 		res.render('index',
 		{ 
@@ -35,18 +37,13 @@ module.exports = function(passport){
 		}
 		);
 	});
-	// API : Create form - First step into registration
+	//=======================================================
+	// API
+	//=======================================================
 	router.post('/api/forms/create', forms.create);
-	// API : List forms
-	router.get('/api/forms/list', forms.getAll);
-	// API : Complete registration and get profile
 	router.post('/api/profile/:id', profiles.getOne);
-	// API : Upload and link to profile
 	router.post('/api/profile/:id/upload', profiles.upload);
-	// API : Update user profile
 	router.post('/api/profile/:id/update', profiles.update);
-	// API : List profiles
-	router.get('/api/profile/list', profiles.getAll);
 	//=======================================================
 	// SECURED ADMIN PANEL
 	//=======================================================
@@ -56,6 +53,7 @@ module.exports = function(passport){
 		failureFlash : true
 	}));
 	router.get('/wicked-admins/login', admin.login);
+	router.get('/wicked-admins/', isAuthenticated, admin.home);
 	router.get('/wicked-admins/home', isAuthenticated, admin.home);
 	router.get('/wicked-admins/profile/:id', isAuthenticated, admin.getProfile);
 	router.get('/wicked-admins/profile/:id/addFavorite', isAuthenticated, admin.addFavorite);

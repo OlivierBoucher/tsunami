@@ -69,15 +69,6 @@ else{
 			    //The posted form was not validated
 			    res.send({result : "Error", message: "Le formulaire recu est invalide"});
 			}
-		},
-		getAll : function(req, res) {
-			Form.find(function(err, forms) {
-				if (err){
-					console.log(err);
-					res.send(err);
-				}
-				res.json(forms);
-			});
 		}
 	}
 

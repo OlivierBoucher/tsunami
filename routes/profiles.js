@@ -1,11 +1,11 @@
 var mongoose 	= require('mongoose');
 var Profile 	= mongoose.model('TestApiProfile3');
 var Form 		= mongoose.model('TestApiForm');
+var User 		= mongoose.model('TestUser2');
 var fs 			= require('fs-extra');
 var path 		= require('path');
 
 var profiles = {
-	// TODO : Remove from seen in each profile
 	update : function(req, res){
 		if(req.params.id.match(/^[0-9a-fA-F]{24}$/)){
 			var id = req.params.id;
@@ -26,30 +26,49 @@ var profiles = {
 						else{
 							res.send({result : "Success", message: "Mise à jour du profil réussie"});
 							//Remove seen from all admins
+							User.find({}, function(err, users){
+								if(err){
+									console.log(err);
+								}
+								else{
+									users.forEach(function(user){
+										for(i = 0; i< user.seenProfiles.length; i++){
+											if(user.seenProfiles[i] === id){
+												//console.log('Removed seen: ' + id + 'by ' + user.username);
+												user.seenProfiles.splice(i, 1);
+												break;
+											}
+										}
+										user.save(function(err){
+											console.log(err);
+										});
+									});
+								}
+							});
 						}
 					});
 				}
 			});
+}
+else{
+			//Id error
+			console.log('Wrong id');
+			res.status(400).end();
 		}
-		else{
-			    //Id error
-			    console.log('Wrong id');
-			    res.status(400).end();
-			}
-		},
+	},
 
-		getOne : function(req, res){
-			if(req.params.id.match(/^[0-9a-fA-F]{24}$/)){
-				var id = req.params.id;
-				console.log('Recieved a request with formId: ' + id);
-				Profile.findOne({'formId': id}, function(err, profile){
-					if(err){
-						console.log(err);
-					}
-					else{
-						console.log('Profile search went sucessfully');
-						if(profile != null){
-							console.log('A profile was found');
+	getOne : function(req, res){
+		if(req.params.id.match(/^[0-9a-fA-F]{24}$/)){
+			var id = req.params.id;
+			console.log('Recieved a request with formId: ' + id);
+			Profile.findOne({'formId': id}, function(err, profile){
+				if(err){
+					console.log(err);
+				}
+				else{
+					console.log('Profile search went sucessfully');
+					if(profile != null){
+						console.log('A profile was found');
 			          //Return the profile
 			          res.send({result : "Success", profile: profile});
 			      }
@@ -168,16 +187,6 @@ else{
 			    });
 			    res.status(400).end();
 			}
-		},
-		getAll : function(req, res) {
-			Profile.find(function(err, profiles) {
-				if (err){
-					console.log(err);
-					res.send(err);
-				}
-
-				res.json(profiles);
-			});
 		}
 	}
 

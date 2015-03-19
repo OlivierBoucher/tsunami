@@ -5,20 +5,31 @@ block content
 		.container
 			.row
 				.col-md-4
+					h2 Statistiques
+					table.table.table-bordered
+						thhead
+							tr
+								th Propriété
+								th.text-center Valeur
+						tbody
+							each stat in stats
+								tr
+									td=stat.name
+									td.text-center=stat.value
 					h2 Mes favoris
 					table.table.table-bordered
 						thhead
 							tr
 								th Nom
-								th Consulter
+								th.text-center Consulter
 						tbody
-							each profile in likedProfiles
+							each profile in favorites
 								tr
 									td=profile.fullName
-									td
+									td.text-center
 										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
 				.col-md-8
-					h2 Tout les profiles
+					h2 Tout les profils
 					table.table.table-bordered
 						thead
 							tr
@@ -33,7 +44,8 @@ block content
 									td.text-center=profile.fullName
 									td.text-center=profile.email
 									td.text-center=moment(profile.lastModified).locale('fr').fromNow()
-									td.text-center Non
+									td.text-center
+										i(class="glyphicon glyphicon-eye-close")
 									td.text-center
 										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
 							each profile in profiles.seen
@@ -41,10 +53,7 @@ block content
 									td.text-center=profile.fullName
 									td.text-center=profile.email
 									td.text-center=moment(profile.lastModified).locale('fr').fromNow()
-									td.text-center Oui
+									td.text-center
+										i(class="glyphicon glyphicon-eye-open")
 									td.text-center
 										a.btn.btn-default(href='/wicked-admins/profile/' + profile.id, role='button') Voir
-
-
-
-

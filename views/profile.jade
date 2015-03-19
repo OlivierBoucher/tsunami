@@ -6,7 +6,7 @@ block content
 			.row
 				.col-md-8.col-md-offset-2
 					h1
-						|Profile 
+						|Profil 
 						a(href=(isFavorite ? ('/wicked-admins/profile/' + profile.id + '/removeFavorite') : ('/wicked-admins/profile/' + profile.id + '/addFavorite')))
 							i(class=(isFavorite ? 'glyphicon glyphicon-star' : 'glyphicon glyphicon-star-empty'))
 					p= 'Nom: ' + profile.fullName
