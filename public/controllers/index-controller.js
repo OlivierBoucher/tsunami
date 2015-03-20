@@ -1,8 +1,12 @@
-coreModule.controller('indexCtrl', function($scope, $http, $timeout){
+coreModule.controller('indexCtrl', function($scope, $http, $timeout, $document, $window, $location, $anchorScroll){
   $scope.title = "testTitle";
   $scope.alerts = [];
   $scope.subbed = false;
   $scope.isCollapsed = true;
+  $scope.boundingValue =0;
+  $scope.scrollValue = 0;
+  $scope.showText = false;
+
   $scope.today = function() {
    $scope.dt = new Date();
  };
@@ -90,5 +94,15 @@ else{
   };
   for (var i=0; i<4; i++) {
     $scope.addSlide();
+  }
+  $document.on('scroll', function(){
+    var scrollStart = angular.element(document.getElementById('scrollStart'));
+    $scope.showText = scrollStart[0].getBoundingClientRect().top - $window.innerHeight < 0;
+    $scope.$apply();
+  });
+  $scope.scrollTo = function(id){
+    console.log(id);
+    $location.hash(id);
+    $anchorScroll();
   }
 });

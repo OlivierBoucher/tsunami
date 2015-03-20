@@ -62,7 +62,7 @@ h2{
 }
 .subCarousel h2{
 	margin-top: 15px;
-	color: #FFF;
+	color: #767676;
 	font-size:48px;
 }
 .form-control{
@@ -163,3 +163,24 @@ h2{
 blockquote{
 	font-size:13px;
 }
+.col-text{
+	margin-top: 20px;
+	text-align: left;
+}
+#subHalf{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #767676;
+	font-size:16px;
+}
+.footer{
+	background-color: #767676;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+.invisible{
+	position: absolute; 
+  	left: -999em;
+  	visibility: hidden;
+}
+
