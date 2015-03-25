@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 text-center">
-				<img src="assets/img/ts_imageheader_f.png" class="img-responsive"/>
+				<img src="assets/img/ts_imageheader_f6.png" class="img-responsive"/>
 			</div>
 			<div class="col-md-6 text-center">
 				<form name="form" class="form-horizontal subForm">
@@ -109,32 +109,101 @@
 				<span id="scrollStart" class="invisible">
 					U looking at my code u creepy bastard ?
 				</span>
-				<p class="col-text" ng-show="showText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc libero, hendrerit a malesuada vitae, ornare a lacus. Morbi suscipit aliquet tristique. In vitae feugiat massa, vel pulvinar orci.
-				</p>
+				<div class="col-text" ng-show="showText">
+					<p>
+						Les artistes visuels sélectionnés créeront des oeuvres de grand format en direct sur les murs du GRAVE.
+						Les visiteurs sont invités à venir assister à la performance toute la journée. Un service de bar sera sur place et l’ambiance
+						sera assurée par une sélection musicale éclectique de morceaux choisis par les artistes.
+					</p>
+					<p class="ca-fesse">
+						Accès: 15$ nombre d’entrées limitées
+						<br />
+						Billets en vente chez Teaspoon et au Cactus
+
+						<!--Entre 12 h et 18 h, 12 
+
+						À 19 h Brendon Laliberté offrira un spectacle musical acoustique
+
+						À 20 h 30 : Bolduc tout croche-->
+					<p>
+					<div collapse="conceptCollapsed" class="text-center">
+						<img class="img-responsive qrt" src="assets/img/ts_imageheader_smile.png"/>
+					</div>
+				</div>
 			</div>
 			<div id="concept" class="col-md-4 text-center">
 				<img ng-src="{{showText ? 'assets/img/ts_conceptv2_img.png' : 'assets/img/ts_conceptv2_img_2.png'}}" class="img-responsive"/>
-				<p class="col-text" ng-show="showText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc libero, hendrerit a malesuada vitae, ornare a lacus. Morbi suscipit aliquet tristique. In vitae feugiat massa, vel pulvinar orci.
-				</p>
+				<div class="col-text" ng-show="showText">
+					<p>
+						Tu dessines et tu aimerais participer à un évènement unique ou 12 artistes créent en direct aux marqueurs noirs
+						sur les murs vierges du Grave de Victoriaville?
+					</p>
+					<p class="ca-fesse">
+						Tu as jusqu’au 3 avril pour soumettre ta candidature au Tsunami 2015.
+					</p>
+					<p>
+						<button 
+						ng-class="conceptCollapsed ? 'esp-collapsed' : 'esp-expanded'" 
+						ng-click="conceptCollapsed = !conceptCollapsed">
+						</button>
+					</p>
+					<div collapse="conceptCollapsed">
+						<p>
+							Les candidats choisis seront invités à performer en direct le 25 avril 2015 sur les murs intérieurs du centre d’artiste
+							le Grave de Victoriaville. Seuls les marqueurs noirs à base d’eau fournis gratuitement aux participants sélectionnés
+							seront autorisés. La phase de création débutera à 12 h pour se terminer à 18 h. s’en suivra le dévoilement
+							de la murale et un spectacle musical clôturera l’évènement.
+						</p>
+						<p class="ca-fesse">
+							Fais-nous parvenir les liens ou les images de tes meilleures réalisations avant le 3 avril à l'aide du formulaire ci-haut.
+						</p>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-4 text-center">
 				<img ng-src="{{showText ? 'assets/img/ts_musique_img.png' : 'assets/img/ts_musique_img_2.png'}}" class="img-responsive"/>
-				<p class="col-text" ng-show="showText">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc libero, hendrerit a malesuada vitae, ornare a lacus. Morbi suscipit aliquet tristique. In vitae feugiat massa, vel pulvinar orci.
-				</p>
+				<div class="col-text" ng-show="showText">
+					<p>
+						19:00 / Brendon Laliberté . Acoustique
+						<br />
+						20:00 / Bolduc Tout Croche
+					</p>
+					<div collapse="conceptCollapsed">
+						<div plangular="http://soundcloud.com/jxnblk/plangular">
+							<div class="row">
+								<div class="col-xs-3">
+								<button class="btn btn-default player-btn" ng-click="playPause()">
+							      <svg ng-if="player.playing != track" plangular-icon="play"></svg>
+	      						<svg ng-if="player.playing == track" plangular-icon="pause"></svg>
+							    </button>
+								</div>
+								<div class="col-xs-9">
+									<h4 class="player-track">{{ track.title }} - {{ track.user.username }}</h4>
+									<progressbar class="player-bar" ng-click="seek($event)" value="(currentTime / duration) * 100 || 0"></progressbar>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="videoTeaser">
+<div class="linesBackground">
 	<div class="container">
-		<div class="row">
+		<div class="row teaser">
 			<div class="col-md-12">
 				<div class="embed-responsive embed-responsive-16by9">
 				  <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/YE0QUvjEk_c"></iframe>
 				</div>
+			</div>
+		</div>
+		<div class="row collab">
+			<div class="col-md-4 text-center">
+				<img class="img-responsive" src="/assets/img/ts_tshirtv2.png"/>
+			</div>
+			<div class="col-md-8 text-center img-text">
+				<img class="img-responsive" src="/assets/img/ts_tshirt_textev2.png"/>
 			</div>
 		</div>
 	</div>

@@ -1,12 +1,11 @@
 coreModule.controller('indexCtrl', function($scope, $http, $timeout, $document, $window, $location, $anchorScroll){
-  $scope.title = "testTitle";
   $scope.alerts = [];
   $scope.subbed = false;
   $scope.isCollapsed = true;
   $scope.boundingValue =0;
   $scope.scrollValue = 0;
   $scope.showText = false;
-
+  $scope.conceptCollapsed = true;
   $scope.today = function() {
    $scope.dt = new Date();
  };

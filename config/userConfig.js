@@ -14,3 +14,16 @@ olivier.save(function(err){
 	}
 	console.log('Added user olivier');
 });
+var testAdmin = new User({
+	username: 'testadmin2',
+	password: '$2a$04$GUbPP.Wm4j4OB7nqXeAAQ.myX/1W9aX8Ch4HIR82t02SnxGzEneMi',
+	favoriteProfiles: [],
+	seenProfiles: [],
+	discardedProfiles: []
+});
+testAdmin.save(function(err){
+	if(err){
+		console.log(err);
+	}
+	console.log('Added user testadmin');
+});
