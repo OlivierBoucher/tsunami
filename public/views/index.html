@@ -10,210 +10,251 @@
     </carousel>
 </div>-->
 <nav class="navbar navbar-default navbar-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-click="isCollapsed = !isCollapsed">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#"><img src="assets/img/ts_logo.png" style="max-width: 200px;"/></a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse" collapse="isCollapsed">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="text-center"><a ng-click="scrollTo('deroulement')">DÉROULEMENT</a></li>
-				<li class="text-center"><a ng-click="scrollTo('concept')">CONCEPT</a></li>
-				<li class="text-center"><a href="#">PARTENAIRES</a></li>
-				<li class="text-center"><a href="#">CONTACT</a></li>
-			</ul>
-		</div><!--/.nav-collapse -->
-	</div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-click="menuCollapsed = !menuCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><img src="assets/img/ts_logo.png" style="max-width: 200px;" /></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" collapse="isCollapsed">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="text-center"><a href="mailto:infos.tsunami@gmail.com">INFOS.TSUNAMI@GMAIL.COM</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
 </nav>
-<!--<div class="eventTimer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<timer end-time="1429099200000">
-					<h2>
-						{{days}}J
-					 	{{hours}}H
-					  	{{minutes}}M
-					  	{{seconds}}S
-					 </h2>
-				</timer>
-			</div>
-		</div>
-	</div>
-</div>-->
 <div class="subCarousel">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 text-center">
-				<img src="assets/img/ts_imageheader_f6.png" class="img-responsive"/>
-			</div>
-			<div class="col-md-6 text-center">
-				<form name="form" class="form-horizontal subForm">
-					<div class="form-group">
-						<div class="col-sm-8 col-sm-offset-2 text-center">
-							<timer end-time="1429099200000">
-								<h2 class="grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="assets/img/ts_imageheader_f6.png" class="img-responsive" />
+            </div>
+            <div class="col-md-6 text-center">
+                <form name="form" class="form-horizontal subForm">
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2 text-center">
+                            <timer end-time="1429934400000">
+                                <h2 class="grey">
 									{{days}} /
 									{{hours}} /
 									{{minutes}} /
 									{{seconds}}
 								</h2>
-							</timer>
-						</div>
-					</div>
-					<div class="form-group" show-errors>
-						
-						<div class="col-sm-8 col-sm-offset-2">
-							<input type="text" name="fullName" class="form-control" id="inputFullName" placeholder="Nom complet" 
-							ng-model="user.fullName" required/>
-						</div>
-					</div>
-					<div class="form-group" show-errors>
-						
-						<div class="col-sm-8 col-sm-offset-2">
-							<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Courriel" 
-							ng-model="user.email" required/>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-8 col-sm-offset-2">
-							<input class="btn btn-default" style="width:100%;" value="M'inscrire"type="submit" ng-click="save()" />
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-8 col-sm-offset-2">
-							<div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
-						</div>
-					</div>
-				</form>
-				<div class="col-sm-8 col-sm-offset-2">
-					<img src="assets/img/ts_form_demv3.png" class="img-responsive" style=/>
-				</div>
-			</div>
-		</div>
-	</div>
+                            </timer>
+                        </div>
+                    </div>
+                    <div class="form-group" show-errors>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input type="text" name="fullName" class="form-control" id="inputFullName" placeholder="Nom complet" ng-model="user.fullName" required/>
+                        </div>
+                    </div>
+                    <div class="form-group" show-errors>
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Courriel" ng-model="user.email" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input class="btn btn-default" style="width:100%;" value="M'inscrire" type="submit" ng-click="save()" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-sm-8 col-sm-offset-2">
+                    <img src="assets/img/ts_form_demv3.png" class="img-responsive" style=/>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="subHalf">
-	<div class="container">
-		<div class="row">
-			<!--<div class="col-md-8 col-md-offset-2 text-justify">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-8 col-md-offset-2 text-justify">
 				<h1>&ldquo;</h1><p>Rien sur ce foutu mur, un vaste étendu de neige, l’éternel devant mes yeux, c’est ça l’hiver nucléaire, des boulettes de regret dans le gorgoton, comment faire revenir cette inspiration perdue dans les dédales de mon être, que dalle... Comme pour faire face au néant, la lumière doit jaillir, alors donc, inversons les rôles, de cette lumière faisons émerger le néant, avec ce trait noir nous ferons en sorte que cette surface devienne autre chose, un mélange des êtres chaotiques que nous sommes et de cette perfection originelle, avec ce mur blanc réinventons notre monde, chacun à notre manière. Vague déferlante de traits noirs -Tsunami- à lacérer la perfection, on en a que faire du parfait, on est des humains. Un hapenning de haute envergure qui réunira des lacéreurs de tout acabit.</p><h1 style="float:right; margin-top:10px">&rdquo;</h1>
 			</div>-->
-			<div id="deroulement" class="col-md-4 text-center">
-			<img ng-src="{{showText ? 'assets/img/ts_deroulv2_img.png' : 'assets/img/ts_deroulv2_img_2.png'}}" class="img-responsive"/>
-				<span id="scrollStart" class="invisible">
+            <div id="deroulement" class="col-md-4 text-center">
+                <img ng-src="{{showText ? 'assets/img/ts_deroulv2_img.png' : 'assets/img/ts_deroulv2_img_2.png'}}" class="img-responsive" />
+                <span id="scrollStart" class="invisible">
 					U looking at my code u creepy bastard ?
 				</span>
-				<div class="col-text" ng-show="showText">
-					<p>
-						Les artistes visuels sélectionnés créeront des oeuvres de grand format en direct sur les murs du GRAVE.
-						Les visiteurs sont invités à venir assister à la performance toute la journée. Un service de bar sera sur place et l’ambiance
-						sera assurée par une sélection musicale éclectique de morceaux choisis par les artistes.
-					</p>
-					<p class="ca-fesse">
-						Accès: 15$ nombre d’entrées limitées
-						<br />
-						Billets en vente chez Teaspoon et au Cactus
-
-						<!--Entre 12 h et 18 h, 12 
-
-						À 19 h Brendon Laliberté offrira un spectacle musical acoustique
-
-						À 20 h 30 : Bolduc tout croche-->
-					<p>
-					<div collapse="conceptCollapsed" class="text-center">
-						<img class="img-responsive qrt" src="assets/img/ts_imageheader_smile.png"/>
-					</div>
-				</div>
-			</div>
-			<div id="concept" class="col-md-4 text-center">
-				<img ng-src="{{showText ? 'assets/img/ts_conceptv2_img.png' : 'assets/img/ts_conceptv2_img_2.png'}}" class="img-responsive"/>
-				<div class="col-text" ng-show="showText">
-					<p>
-						Tu dessines et tu aimerais participer à un évènement unique ou 12 artistes créent en direct aux marqueurs noirs
-						sur les murs vierges du Grave de Victoriaville?
-					</p>
-					<p class="ca-fesse">
-						Tu as jusqu’au 3 avril pour soumettre ta candidature au Tsunami 2015.
-					</p>
-					<p>
-						<button 
-						ng-class="conceptCollapsed ? 'esp-collapsed' : 'esp-expanded'" 
-						ng-click="conceptCollapsed = !conceptCollapsed">
-						</button>
-					</p>
-					<div collapse="conceptCollapsed">
-						<p>
-							Les candidats choisis seront invités à performer en direct le 25 avril 2015 sur les murs intérieurs du centre d’artiste
-							le Grave de Victoriaville. Seuls les marqueurs noirs à base d’eau fournis gratuitement aux participants sélectionnés
-							seront autorisés. La phase de création débutera à 12 h pour se terminer à 18 h. s’en suivra le dévoilement
-							de la murale et un spectacle musical clôturera l’évènement.
-						</p>
-						<p class="ca-fesse">
-							Fais-nous parvenir les liens ou les images de tes meilleures réalisations avant le 3 avril à l'aide du formulaire ci-haut.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 text-center">
-				<img ng-src="{{showText ? 'assets/img/ts_musique_img.png' : 'assets/img/ts_musique_img_2.png'}}" class="img-responsive"/>
-				<div class="col-text" ng-show="showText">
-					<p>
-						19:00 / Brendon Laliberté . Acoustique
-						<br />
-						20:00 / Bolduc Tout Croche
-					</p>
-					<div collapse="conceptCollapsed">
-						<div plangular="http://soundcloud.com/jxnblk/plangular">
-							<div class="row">
-								<div class="col-xs-3">
-								<button class="btn btn-default player-btn" ng-click="playPause()">
-							      <svg ng-if="player.playing != track" plangular-icon="play"></svg>
-	      						<svg ng-if="player.playing == track" plangular-icon="pause"></svg>
-							    </button>
-								</div>
-								<div class="col-xs-9">
-									<h4 class="player-track">{{ track.title }} - {{ track.user.username }}</h4>
-									<progressbar class="player-bar" ng-click="seek($event)" value="(currentTime / duration) * 100 || 0"></progressbar>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="col-text" ng-show="showText">
+                    <p>
+                        Les artistes visuels sélectionnés créeront des oeuvres de grand format en direct sur les murs du GRAVE. Les visiteurs sont invités à venir assister à la performance toute la journée. Un service de bar sera sur place et l’ambiance sera assurée par une sélection musicale éclectique de morceaux choisis par les artistes.
+                    </p>
+                    <p class="ca-fesse">
+                        Accès: 15$ nombre d’entrées limitées
+                        <br /> Billets en vente chez Teaspoon et au Cactus
+                        <p>
+                            <div collapse="conceptCollapsed" class="text-center">
+                                <img class="img-responsive qrt" src="assets/img/ts_imageheader_smile.png" />
+                            </div>
+                </div>
+            </div>
+            <div id="concept" class="col-md-4 text-center">
+                <img ng-src="{{showText ? 'assets/img/ts_conceptv2_img.png' : 'assets/img/ts_conceptv2_img_2.png'}}" class="img-responsive" />
+                <div class="col-text" ng-show="showText">
+                    <p>
+                        Tu dessines et tu aimerais participer à un évènement unique ou 12 artistes créent en direct aux marqueurs noirs sur les murs vierges du Grave de Victoriaville?
+                    </p>
+                    <p class="ca-fesse">
+                        Tu as jusqu’au 3 avril pour soumettre ta candidature au Tsunami 2015.
+                    </p>
+                    <p>
+                        <button ng-class="conceptCollapsed ? 'esp-collapsed' : 'esp-expanded'" ng-click="conceptCollapsed = !conceptCollapsed">
+                        </button>
+                    </p>
+                    <div collapse="conceptCollapsed">
+                        <p>
+                            Les candidats choisis seront invités à performer en direct le 25 avril 2015 sur les murs intérieurs du centre d’artiste le Grave de Victoriaville. Seuls les marqueurs noirs à base d’eau fournis gratuitement aux participants sélectionnés seront autorisés. La phase de création débutera à 12 h pour se terminer à 18 h. s’en suivra le dévoilement de la murale et un spectacle musical clôturera l’évènement.
+                        </p>
+                        <p class="ca-fesse">
+                            Fais-nous parvenir les liens ou les images de tes meilleures réalisations avant le 3 avril à l'aide du formulaire ci-haut.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img ng-src="{{showText ? 'assets/img/ts_musique_img.png' : 'assets/img/ts_musique_img_2.png'}}" class="img-responsive" />
+                <div class="col-text" ng-show="showText">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img class="img-responsive" src="/assets/img/ts_brendon.png" />
+                        </div>
+                        <div class="col-xs-9">
+                            <span class="ca-fesse-m">19:00 / Autumn leaves</span>
+                            <br />
+                            <small>Folk</small>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img class="img-responsive" src="/assets/img/ts_bolduc.png" />
+                        </div>
+                        <div class="col-xs-9">
+                            <span class="ca-fesse-m">20:00 / Bolduc Tout Croche</span>
+                            <br />
+                            <small>Folk Contemporain pour les poètes de salon</small>
+                        </div>
+                    </div>
+                    <div class="musique" collapse="conceptCollapsed">
+                        <div plangular="https://soundcloud.com/utumneaves/autumn-leaves-consumed">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <button class="btn btn-default player-btn-dbl" ng-click="playPause()">
+                                        <svg ng-if="player.playing != track" plangular-icon="play"></svg>
+                                        <svg ng-if="player.playing == track" plangular-icon="pause"></svg>
+                                    </button>
+                                </div>
+                                <div class="col-xs-9">
+                                    <h4 class="player-track">{{ track.title }}</h4>
+                                    <progressbar class="player-bar" ng-click="seek($event)" value="(currentTime / duration) * 100 || 0"></progressbar>
+                                </div>
+                            </div>
+                        </div>
+                        <div plangular="https://soundcloud.com/bolduc-tout-croche/la-petite-libert">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <button class="btn btn-default player-btn-dbl" ng-click="playPause()">
+                                        <svg ng-if="player.playing != track" plangular-icon="play"></svg>
+                                        <svg ng-if="player.playing == track" plangular-icon="pause"></svg>
+                                    </button>
+                                </div>
+                                <div class="col-xs-9">
+                                    <h4 class="player-track">{{ track.title }}</h4>
+                                    <progressbar class="player-bar" ng-click="seek($event)" value="(currentTime / duration) * 100 || 0"></progressbar>
+                                </div>
+                            </div>
+                        </div>
+                        <div plangular="https://soundcloud.com/bolduc-tout-croche/loption-et-lobligatoire-bolduc">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <button class="btn btn-default player-btn-dbl" ng-click="playPause()">
+                                        <svg ng-if="player.playing != track" plangular-icon="play"></svg>
+                                        <svg ng-if="player.playing == track" plangular-icon="pause"></svg>
+                                    </button>
+                                </div>
+                                <div class="col-xs-9">
+                                    <h4 class="player-track">{{ track.title }}</h4>
+                                    <progressbar class="player-bar" ng-click="seek($event)" value="(currentTime / duration) * 100 || 0"></progressbar>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="linesBackground">
-	<div class="container">
-		<div class="row teaser">
-			<div class="col-md-12">
-				<div class="embed-responsive embed-responsive-16by9">
-				  <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/YE0QUvjEk_c"></iframe>
-				</div>
-			</div>
-		</div>
-		<div class="row collab">
-			<div class="col-md-4 text-center">
-				<img class="img-responsive" src="/assets/img/ts_tshirtv2.png"/>
-			</div>
-			<div class="col-md-8 text-center img-text">
-				<img class="img-responsive" src="/assets/img/ts_tshirt_textev2.png"/>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row teaser">
+            <div class="col-md-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/mFecdpTPxiw"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row collab">
+            <div class="col-md-4 text-center">
+                <img class="img-responsive" src="/assets/img/ts_tshirtv2.png" />
+            </div>
+            <div class="col-md-8 text-center img-text">
+                <img class="img-responsive" src="/assets/img/ts_tshirt_textev2.png" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="partenaires">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-1 col-md-offset-1">
+                <img class="img-responsive" src="/assets/img/com_local.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_impartlitho.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_martin.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_pabst.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_parvelo.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_pm2.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_teaspoon.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_rivard.png" />
+            </div>
+            <div class="col-md-1">
+                <img class="img-responsive" src="/assets/img/com_volks.png" />
+            </div>
+        </div>
+    </div>
 </div>
 <div class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				test
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <p>Merci à nos partenaires et à vous qui vous-êtes rendus jusqu'au bas du site.</p>
+                <small class="grey">Conception web Boucher & Nolet</small>
+            </div>
+        </div>
+    </div>
 </div>

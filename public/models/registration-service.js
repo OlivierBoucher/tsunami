@@ -1,9 +1,9 @@
-coreModule.factory('registrationSrvc', function ($http, $q, $timeout) {
+coreModule.factory('registrationSrvc', function($http, $q, $timeout) {
 
     var factory = {
-        profile : false,
+        profile: false,
 
-        getProfile : function(formId){
+        getProfile: function(formId) {
             var deferred = $q.defer();
             var req = {
                 method: 'POST',
@@ -11,18 +11,20 @@ coreModule.factory('registrationSrvc', function ($http, $q, $timeout) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: {id : formId}
+                data: {
+                    id: formId
+                }
             };
             $http(req)
-            .success(function(data, status, headers, config) {
+                .success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
-                    if(data.result = 'Success'){
+                    if (data.result = 'Success') {
                         factory.profile = data.profile;
                         deferred.resolve(factory.profile);
                     }
                 })
-            .error(function(data, status, headers, config) {
+                .error(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
                     console.log('error');

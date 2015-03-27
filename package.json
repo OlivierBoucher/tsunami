@@ -25,5 +25,13 @@
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "validator": "^3.33.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-ng-annotate": "^0.5.2",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-uglify": "^1.1.0",
+    "gutil": "^1.6.4"
   }
 }

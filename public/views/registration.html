@@ -2,8 +2,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center">
-				<timer end-time="1429099200000">
-					<h1>
+				<img class="img-responsive" src="/assets/img/ts_logo.png" />
+			</div>
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<timer end-time="1429934400000">
+					<h1 class="grey">
 						{{days}} /
 						{{hours}} /
 						{{minutes}} /
@@ -18,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<h2>Votre profil</h2>
+				<h2 class="grey">Mon profil</h2>
 				<p>{{profile.fullName}}</p>
 				<p>{{profile.email}}</p>
 			</div>
@@ -29,11 +32,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<h2>Renseignements modifiables</h2>
-				<input type="text" name="portfolioLink" class="form-control" id="inputFullName" placeholder="Lien vers votre portfolio" 
+				<input type="text" name="portfolioLink" class="form-control" id="inputFullName" placeholder="Lien vers mon portfolio" 
 				ng-model="profile.portfolioLink" required/>
 				<br />
-				<textarea type="text" style="resize:none; height:300px;" name="customMessage" class="form-control" id="inputFullName" placeholder="Message de motivation pour le jury de sélection" 
+				<textarea type="text" style="resize:none; height:300px;" name="customMessage" class="form-control" id="inputFullName" placeholder="Je me décrirait comme..." 
 				ng-model="profile.customMessage" required></textarea>
 				<div ng-show="profile.attachments.length > 0">
 					<h4>Fichiers reçus ({{profile.attachments.length}}/10)</h4>
