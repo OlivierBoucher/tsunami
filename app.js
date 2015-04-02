@@ -59,6 +59,6 @@ app.use(function(req, res, next) {
 	);
 });
 if(!module.parent){
-	app.listen(port,);
+	app.listen(port);
 	console.log('Server started on port 3000');
 }
