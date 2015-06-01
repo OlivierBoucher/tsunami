@@ -42,7 +42,6 @@ coreModule.controller('registrationCtrl', function($scope, $http, $timeout, $rou
     $scope.saveProfile = function() {
         if ($scope.uploader.queue.length > 0) {
             $scope.uploader.uploadAll();
-            //$scope.uploader.clearQueue();
         }
         var data = {
             portfolioLink: $scope.profile.portfolioLink,

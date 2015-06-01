@@ -17,16 +17,12 @@ coreModule.factory('registrationSrvc', function($http, $q, $timeout) {
             };
             $http(req)
                 .success(function(data, status, headers, config) {
-                    // this callback will be called asynchronously
-                    // when the response is available
                     if (data.result = 'Success') {
                         factory.profile = data.profile;
                         deferred.resolve(factory.profile);
                     }
                 })
                 .error(function(data, status, headers, config) {
-                    // this callback will be called asynchronously
-                    // when the response is available
                     console.log('error');
                     deferred.reject('Impossible de récupérer le profile');
                 });

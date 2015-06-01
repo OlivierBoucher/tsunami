@@ -1,38 +1,38 @@
 {
-  "name": "SampleNodeJsWebApp",
-  "version": "1.0.0",
-  "description": "Sample node web server",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.12.0",
-    "connect-flash": "^0.1.1",
-    "email-templates": "^1.2.0",
-    "express": "^4.12.2",
-    "express-session": "^1.10.3",
-    "fs-extra": "^0.16.5",
-    "jade": "^1.9.2",
-    "moment": "^2.9.0",
-    "mongoose": "^3.8.24",
-    "morgan": "^1.5.1",
-    "multer": "^0.1.8",
-    "nodemailer": "^1.3.1",
-    "passport": "^0.2.1",
-    "passport-local": "^1.0.0",
-    "serve-favicon": "^2.2.0",
-    "validator": "^3.33.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
-    "gulp-ng-annotate": "^0.5.2",
-    "gulp-sourcemaps": "^1.5.1",
-    "gulp-uglify": "^1.1.0",
-    "gutil": "^1.6.4"
-  }
+    "name": "SampleNodeJsWebApp",
+    "version": "1.0.0",
+    "description": "Sample node web server",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.12.0",
+        "connect-flash": "^0.1.1",
+        "email-templates": "^1.2.0",
+        "express": "^4.12.2",
+        "express-session": "^1.10.3",
+        "fs-extra": "^0.16.5",
+        "jade": "^1.9.2",
+        "moment": "^2.9.0",
+        "mongoose": "^3.8.24",
+        "morgan": "^1.5.1",
+        "multer": "^0.1.8",
+        "nodemailer": "^1.3.1",
+        "passport": "^0.2.1",
+        "passport-local": "^1.0.0",
+        "serve-favicon": "^2.2.0",
+        "validator": "^3.33.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.8.11",
+        "gulp-concat": "^2.5.2",
+        "gulp-ng-annotate": "^0.5.2",
+        "gulp-sourcemaps": "^1.5.1",
+        "gulp-uglify": "^1.1.0",
+        "gutil": "^1.6.4"
+    }
 }

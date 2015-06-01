@@ -245,6 +245,7 @@ blockquote {
     font-weight: 700;
     color: #FFF;
 }
+
 .ca-fesse-m {
     font-weight: 400;
     color: #FFF;
@@ -287,6 +288,7 @@ blockquote {
     width: 100%;
     max-height: 67px;
 }
+
 .player-btn-dbl {
     margin-top: 25px;
     padding-left: 25px;
@@ -324,21 +326,27 @@ h4.player-track {
 .img-text {
     padding-top: 25px;
 }
-.musique{
-	margin-top: 55px;
+
+.musique {
+    margin-top: 55px;
 }
-.grey{
-	color:#767676;
+
+.grey {
+    color: #767676;
 }
-.progress-bar{
-	background-color:#767676;
+
+.progress-bar {
+    background-color: #767676;
 }
-.profileTimer{
-	margin-top: 25px;
+
+.profileTimer {
+    margin-top: 25px;
 }
-.err404{
+
+.err404 {
     padding-top: 25px;
 }
-.err404 a{
-    color:#767676;
+
+.err404 a {
+    color: #767676;
 }

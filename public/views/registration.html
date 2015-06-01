@@ -1,102 +1,97 @@
 <div class="profileTimer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3 text-center">
-				<img class="img-responsive" src="/assets/img/ts_logo.png" />
-			</div>
-			<div class="col-md-6 col-md-offset-3 text-center">
-				<timer end-time="1429934400000">
-					<h1 class="grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <img class="img-responsive" src="/assets/img/ts_logo.png" />
+            </div>
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <timer end-time="1429934400000">
+                    <h1 class="grey">
 						{{days}} /
 						{{hours}} /
 						{{minutes}} /
 						{{seconds}}
 					</h1>
-				</timer>
-			</div>
-		</div>
-	</div>
+                </timer>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="profileHeader">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<h2 class="grey">Mon profil</h2>
-				<p>{{profile.fullName}}</p>
-				<p>{{profile.email}}</p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2 class="grey">Mon profil</h2>
+                <p>{{profile.fullName}}</p>
+                <p>{{profile.email}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="profileBody" style="padding-bottom:50px;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<input type="text" name="portfolioLink" class="form-control" id="inputFullName" placeholder="Lien vers mon portfolio" 
-				ng-model="profile.portfolioLink" required/>
-				<br />
-				<textarea type="text" style="resize:none; height:300px;" name="customMessage" class="form-control" id="inputFullName" placeholder="Je me décrirait comme..." 
-				ng-model="profile.customMessage" required></textarea>
-				<div ng-show="profile.attachments.length > 0">
-					<h4>Fichiers reçus ({{profile.attachments.length}}/10)</h4>
-					<ul>
-						<li ng-repeat="file in profile.attachments">
-							{{file.fileName}}
-						</li>
-					</ul>
-				</div>
-				<br />
-				<h4>Ajouter des oeuvres au format image</h4>
-				<p>Une fois envoyée, une oeuvre ne peut être retirée.</p>
-				<input class="btn btn-default" type="file" nv-file-select uploader="uploader" multiple/>
-				<br/>
-				<table class="table" ng-show="uploader.queue.length > 0">
-					<thead>
-						<tr>
-							<th width="50%">Nom</th>
-							<th ng-show="uploader.isHTML5">Taille</th>
-							<th ng-show="uploader.isHTML5">Progrès</th>
-							<th>Statut</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="item in uploader.queue">
-							<td><strong>{{ item.file.name }}</strong></td>
-							<td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
-							<td ng-show="uploader.isHTML5">
-								<div class="progress" style="margin-bottom: 0;">
-									<div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
-								</div>
-							</td>
-							<td class="text-center">
-								<span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-								<span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-								<span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-							</td>
-							<td nowrap>
-								<button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
-									<span class="glyphicon glyphicon-trash"></span> Enlever
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<div ng-show="uploader.progress > 0">
-					<div>
-						État de l'envoi:
-						<div class="progress" style="">
-							<div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
-						</div>
-					</div>
-				</div>
-				<button type="button" style="margin-bottom:20px;" class="btn btn-default" ng-click="saveProfile()">Sauvegarder le profil</button>
-
-				<div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
-
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="text" name="portfolioLink" class="form-control" id="inputFullName" placeholder="Lien vers mon portfolio" ng-model="profile.portfolioLink" required/>
+                <br />
+                <textarea type="text" style="resize:none; height:300px;" name="customMessage" class="form-control" id="inputFullName" placeholder="Je me décrirait comme..." ng-model="profile.customMessage" required></textarea>
+                <div ng-show="profile.attachments.length > 0">
+                    <h4>Fichiers reçus ({{profile.attachments.length}}/10)</h4>
+                    <ul>
+                        <li ng-repeat="file in profile.attachments">
+                            {{file.fileName}}
+                        </li>
+                    </ul>
+                </div>
+                <br />
+                <h4>Ajouter des oeuvres au format image</h4>
+                <p>Une fois envoyée, une oeuvre ne peut être retirée.</p>
+                <input class="btn btn-default" type="file" nv-file-select uploader="uploader" multiple/>
+                <br/>
+                <table class="table" ng-show="uploader.queue.length > 0">
+                    <thead>
+                        <tr>
+                            <th width="50%">Nom</th>
+                            <th ng-show="uploader.isHTML5">Taille</th>
+                            <th ng-show="uploader.isHTML5">Progrès</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td><strong>{{ item.file.name }}</strong></td>
+                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress" style="margin-bottom: 0;">
+                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span> Enlever
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div ng-show="uploader.progress > 0">
+                    <div>
+                        État de l'envoi:
+                        <div class="progress" style="">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" style="margin-bottom:20px;" class="btn btn-default" ng-click="saveProfile()">Sauvegarder le profil</button>
+                <div class="alert alert-{{alert.type}} animate-repeat" ng-repeat="alert in alerts">{{ alert.message }}</div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
